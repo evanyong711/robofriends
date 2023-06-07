@@ -1,19 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import CardList from './CardList'
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import './index.css'
+import App from './App'
+import reportWebVitals from './reportWebVitals'
 import 'tachyons'
-// import { robots } from './robots'
-// ^needs to be destructured as robots.js is export not export default
-// ^needs to be commented out unless CardList requires an argument to be passed into the function
-// ^in which case need to comment out line 3 of CardList.js
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>Robofriends</h1>
-    <CardList/>
+    <App/>
   </React.StrictMode>
 );
 

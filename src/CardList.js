@@ -1,9 +1,7 @@
 import React from 'react'
 import Card from './Card'
-import { robots } from './robots'
-// ^needs to be destructured as robots.js is export not export default
 
-const CardList = () => {
+const CardList = ({ robots }) => {
 	// option 1: (single line)
 	// const cardArray = robots.map((user, i) => <Card key={i} id={robots[i].id} name={robots[i].name} email={robots[i].email}/>)
 	// 
@@ -93,8 +91,8 @@ const CardList = () => {
 // 
 // ALTERNATIVELY:
 // You can accept { robots } as a props for CardList and it'll look sommething like this:
-// but obv don't forget to change line 12 in index.js to <CardList robots = { robots } />
-// AND import { robots } from './robots' in index.js as well
+// but obv don't forget to change line 14 in App.js to <CardList robots = { robots } />
+// AND import { robots } from './robots' in App.js as well
 // 
 // const CardList = (props) => {
 // 	// const { robots } = props
@@ -129,7 +127,7 @@ const CardList = () => {
 export default CardList;
 
 
-// look at https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ for the diffnces between var, let, and const
+// look at https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ for the differences between var, let, and const
 // watch https://scrimba.com/scrim/coede4c58a4461640298cc925 too
 // ^summary: vars are global unless defined within a function
 // BUT NOT for loops and if statement, hence why it is problematic
@@ -141,4 +139,11 @@ export default CardList;
 // const is everything a let variable is EXCEPT the fact that it can't be changed after it's been declared
 // BUT if the const variable is an object (meaning a {}), then we can update the key-value pairs within the {} object without the console throwing errors
 // as long as the actual variable itself isn't changed to be pointing to a whole new piece of data
+
+// arrow functions: https://www.youtube.com/watch?v=h33Srr5J9nY
+// main difference between arrow functions and normal functions: this. is redefined in standard functions whereas it stays within the scope for arrow functions
+// .this in normal functions refer to the scope in which the function is called, not the the scope where it was written
+// and so since the function is most likely called in main/the global scope, the this. does not have access to the class/object members of the class/object it is mostly likely trying to refer to/the author of the code most likely wanted to refer to
+// .this in arrow functions is not redefined and so is the exact same as the scope in which the function is defined
+// and so it can actually refer to class/object members u most prolly intended to refer to
 
