@@ -35,7 +35,7 @@ class App extends Component {
 		const filteredRobots = this.state.robotsArr.filter((robotsSearch) => {
 			return robotsSearch.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
 		})
-		return (
+		return(
 			<div className='tc'>
 				<h1 className='f1'>Robofriends</h1>
 				<SearchBox searchChange={this.onSearchChange}/>
