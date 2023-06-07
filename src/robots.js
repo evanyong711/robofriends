@@ -68,6 +68,9 @@ export const robots = [
 
 // export default:
 // ^note: need to remove curly brackets from line 6 of App.js in order for this to work
+// default exports can actually be renamed in the file importing this file, cos there is only one thing being imported and thus no confusion as long as the location of the file is correctly specified
+// ie. import robots from './robots' can actually be import helloworld from './robots' or anything u want as long as the './robots' path/address part is correct
+// ^just don't forget to replace all usage instances of the variable from "robots" to "helloworld" to the rest of the file/code
 // const robots = [
 //   {
 //     id: 1,
