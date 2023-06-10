@@ -54,7 +54,7 @@ const CardList = ({ robots }) => {
 		{ cardArray }
 		{/*^I can also just return robots.map(...) directly here instead rather than instantiating a new var cardArray */}
 	</div>
-	);
+	)
 }
 
 // using for-standard loop:
@@ -72,7 +72,7 @@ const CardList = ({ robots }) => {
 // 	<div>
 // 		{ cardArray }
 // 	</div>
-// 	);
+// 	)
 // }
 
 // Not using .map() function:
@@ -86,7 +86,7 @@ const CardList = ({ robots }) => {
 // 	    <Card id={robots[4].id} name={robots[4].name} email={robots[4].email}/>
 // 	    <Card id={robots[5].id} name={robots[5].name} email={robots[5].email}/>
 // 	</div>
-// 	);
+// 	)
 // }
 // 
 // ALTERNATIVELY:
@@ -106,7 +106,7 @@ const CardList = ({ robots }) => {
 // 	    <Card id={robots[4].id} name={robots[4].name} email={robots[4].email}/>
 // 	    <Card id={robots[5].id} name={robots[5].name} email={robots[5].email}/>
 // 	</div>
-// 	);
+// 	)
 // }
 // 
 // const CardList = ({ robots }) => {
@@ -120,11 +120,11 @@ const CardList = ({ robots }) => {
 // 	    <Card id={robots[4].id} name={robots[4].name} email={robots[4].email}/>
 // 	    <Card id={robots[5].id} name={robots[5].name} email={robots[5].email}/>
 // 	</div>
-// 	);
+// 	)
 // }
 
 
-export default CardList;
+export default CardList
 
 
 // look at https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/ for the differences between var, let, and const

@@ -3,6 +3,7 @@ import './App.css'
 import SearchBox from '../components/SearchBox'
 import CardList from '../components/CardList'
 import Scroll from '../components/Scroll'
+import ErrorBoundary from '../components/ErrorBoundary'
 // import { robots } from '../robots'
 // ^needs to be destructured as robots.js is export not export default (cos we're exporting multiple values)
 // ^needs to be commented out unless CardList requires an argument to be passed into the function
@@ -21,7 +22,7 @@ import Scroll from '../components/Scroll'
 
 class App extends Component {
 	constructor() {
-		super()
+		super();
 		this.state = {
 			robotsArr: [],
 			searchfield: ''
@@ -56,9 +57,11 @@ class App extends Component {
 				<h1 className='f1'>Robofriends</h1>
 				<SearchBox searchChange={this.onSearchChange}/>
 				<Scroll>
-			    	<CardList robots={filteredRobots}/>
-			    	{/*<CardList robots={this.state.robotsArr}/>*/}
-			    	{/*^this option has no search feature. old line of code I suspect*/}
+					<ErrorBoundary>
+				    	<CardList robots={filteredRobots}/>
+				    	{/*<CardList robots={this.state.robotsArr}/>*/}
+				    	{/*^this option has no search feature. old line of code I suspect*/}
+			    	</ErrorBoundary>
 		    	</Scroll>
 	    	</div>
 		)
@@ -76,9 +79,11 @@ class App extends Component {
 		// 			<h1 className='f1'>Robofriends</h1>
 		// 			<SearchBox searchChange={this.onSearchChange}/>
 		// 			<Scroll>
-		// 		    	<CardList robots={filteredRobots}/>
-		// 		    	{/*<CardList robots={this.state.robotsArr}/>*/}
-		// 		    	{/*^this option has no search feature. old line of code I suspect*/}
+		// 				<ErrorBoundary>
+		// 		    		<CardList robots={filteredRobots}/>
+		// 		    		{/*<CardList robots={this.state.robotsArr}/>*/}
+		// 		    		{/*^this option has no search feature. old line of code I suspect*/}
+		// 				</ErrorBoundary>
 		// 	    	</Scroll>
 		//     	</div>
 		// 	)
@@ -89,6 +94,6 @@ class App extends Component {
 // so each method is actually run twice every render. it doesn't affect anything tho, only speed/efficiency, which is only impt for when the app/website gets bigger
 // but would still be good practice to figure out why for future reference
 
-export default App;
+export default App
 
 // good practice challenge: change this class component into a function that uses useState and event handlers
